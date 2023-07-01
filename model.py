@@ -37,3 +37,24 @@ def change(index: int, new: dict[str, str]):
     for key, field in new.items():
         if field != '':
             phone_book[index - 1][key] = field
+
+
+def save( book: list[dict[str , str]]):
+    file = 'phones.txt'
+    with open(file, 'a', encoding='UTF - 8') as data:
+        if book:
+            for contact in book:
+                uid = contact.get('id')
+                name = contact.get('name')
+                phone = contact.get('phone')
+                comment = contact.get('comment')
+            data.write(f'{uid}:{name}:{phone}:{comment}\n')
+
+def delete_contact(index: int, book: list[dict[str , str]]):
+    if book:
+        result = phone_book.pop(index-1)
+        return result
+
+
+
+

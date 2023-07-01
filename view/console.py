@@ -34,8 +34,8 @@ def show_contacts(book: list[dict[str, str]]):
 def input_contact(message: str) -> dict[str, str]:
     print(message)
     name = input(new_contact[0])
-    phone = input(new_contact[0])
-    comment = input(new_contact[0])
+    phone = input(new_contact[1])
+    comment = input(new_contact[2])
     return {'name': name, 'phone': phone, 'comment': comment}
 
 

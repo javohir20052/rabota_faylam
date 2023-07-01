@@ -11,7 +11,9 @@ def start():
                 model.open_file()
                 print_message(text.open_successful)
             case 2:
-                pass
+                model.save(model.phone_book)
+                print_message(text.save_file)
+
             case 3:
                 show_contacts(model.phone_book)
             case 4:
@@ -33,6 +35,10 @@ def start():
                 print_message(text.contact_changed(new.get('name') if new.get('name') else old_name))
 
             case 7:
-                pass
+                show_contacts(model.phone_book)
+                index = input_return(text.input_index)
+                model.delete_contact(int(index), model.phone_book)
+                print_message(text.delete_contact)
+                model.save(model.phone_book)
             case 8:
                 break
